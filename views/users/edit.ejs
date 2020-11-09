@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<div class="columns">
+<%- include('../partials/left-col') %>
+
+
+<div class="column">
+    <div class="box mt-6" ;>
+        <div class="field">
+            <div class="control">
+                <form  action="/users/<%= oneUser._id %>?_method=PUT" method="POST">
+                    <h2 class="subtitle primary mt-4">Username</h2>
+                    <p><input class="input" type="text" name="username" value="<%= oneUser.username %>"/></p>
+                    <h2 class="subtitle primary mt-4">About Me</h2>
+                    <p><input class="input" type="text" name="aboutInfo" value="<%= oneUser.aboutInfo %>"/></p>
+                    <h2 class="subtitle primary mt-4">Profile Image URL</h2>
+                    <p><input class="input" type="text" name="profileImage" value="<%= oneUser.profileImage %>"/></p>
+                    <p class="has-text-centered"><input class="button is-primary" type="submit" value="edit"/></p> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/right-col') %>
+</div>
+<%- include('../partials/footer') %>

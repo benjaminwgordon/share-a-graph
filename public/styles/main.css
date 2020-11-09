@@ -1,0 +1,35 @@
+
+.typewriter{
+    background-image: url(/static/assets/typewriter2.jpg);
+    background-position: center;
+    background-size: auto;
+}
+
+html{
+    background-color: hsl(0, 0%, 92%);
+}
+
+.buttons {
+    margin:auto;
+    word-wrap:break-word;
+}
+
+textarea {
+    height: 100px;
+    width: 100%;
+    resize: none;
+}
+
+.label {
+    color: hsl(171, 100%, 41%);
+}
+
+a {
+    color: hsl(171, 100%, 41%);
+}
+
+a:hover {
+    color: orange;
+    opacity: .8;
+    border-radius: 4px;
+}

@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<div class="columns" style="margin:auto;">
+<%- include('../partials/left-col') %>
+
+
+<div class="column" style="overflow-y: auto; overflow-x:hidden; max-height:none;">
+        <p class="title has-text-centered is-size-2"> Current Stories</p>
+        <p class="subtitle has-text-centered is-size-4"><a href="/stories/new">
+            <i class="fas fa-book-open"></i> Create a New Story!</a></p>
+        <div>
+        <% for (story of stories) {%>
+            <div class="box">
+                <article class="level">
+                    <div class="level-left" style="flex-direction: column; align-items:flex-start;width:75%">
+                        <div class="title" style=" max-width:75%">
+                            <h4><a href="/stories/<%=story._id%>"><%=story.name%></a></h4>
+                        </div>
+                        <div class="subtitle" style="max-width:75%">
+                            <h4><%=story.description%></h4>
+                        </div>
+                    </div>
+                    <div class="level-right" style="align-self:flex-start">
+                        <h4><a href="/users/<%=story.publisher._id%>"><%=story.publisher.username%></a></h4>
+                    </div>
+                </article>
+                <div style="max-width:100%">
+                    <p><%=story.blurb%></p>
+                </div>
+            </div>
+        <%}%>
+    </div>
+</div>
+
+
+<%- include('../partials/right-col') %>
+</div>
+<%- include('../partials/footer') %>

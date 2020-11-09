@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="hero is-fullheight typewriter has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-size-1" style="color:white">
+            Welcome Back
+        </h1>
+        <div class="columns">
+            <div class="column is-one-third is-offset-one-third">
+                <form action="/login/login" method="POST">
+                    <!--TODO all login to accept username OR email-->
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input class="input" type="email" placeholder="Email" name="email" required />
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input class="input" type="password" placeholder="Password" name="password" required />
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>   
+                    <input class="button is-centered" type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

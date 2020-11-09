@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<div class="columns" style="margin:auto;">
+<%- include('../partials/left-col') %>
+
+
+<div class="column">
+    <div class="box mt-6" ;>
+        <div class="field">
+            <div class="control">
+                <h2 class="title">Story Editor</h2>
+                <form action="/stories/<%=story._id%>?_method=PUT" method="post">
+                    <p class="subtitle primary mt-4">Title</p>
+                    <input class="input" type="text" name="name" value="<%=story.name%>">
+                    <p class="subtitle primary mt-4">Synopsis</p>
+                    <input class="input" type="text" name="description" value="<%=story.description%>">
+                    <p class="subtitle primary mt-4">Content</p>
+                    <p><input class="input" type="text" name="blurb" value="<%=story.blurb%>"></p>
+                    <p class="subtitle primary mt-4">Character limit</p>
+                    <p><input class="input" type="text" name="postCharCount" value="<%=story.postCharCount%>"></p> 
+                    <p class="subtitle primary mt-4">Post limit</p>
+                    <p><input class="input" type="text" name="maxPosts" value="<%=story.maxPosts%>"></p>
+                    <p class="has-text-centered mt-4"><button class="button is-primary is-medium" type="submit">Submit</button></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/right-col') %>
+</div>
+<%- include('../partials/footer') %>
+

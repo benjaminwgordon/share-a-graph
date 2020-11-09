@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<div class="columns">
+<%- include('../partials/left-col') %>
+
+
+<div class="column is-half">
+    <div class="box mt-6">
+            <% if (oneUser.profileImage) {%>
+                <img src="<%=oneUser.profileImage%>"alt="user profile image" style="object-fit:contain;max-height:200px">
+            <% } else {%>
+                <img src="/static/assets/default-profile.svg"  alt="user profile image" style="object-fit:contain;max-height:200px">
+            <% } %>
+
+        <ul class="content is-medium">
+            <p>Username: <%= oneUser.username %></p>
+            <p>About: <%= oneUser.aboutInfo %></p>
+            <p>Stories Contributed:</p>
+            <ul>
+            <% for (story of oneUser.publishedStories) { %>
+                <li><a href="/stories/<%=story._id%>"><%=story.name%></a></li>
+            <% } %>
+            </ul>
+            <% if (userOwnsProfile){ %>
+                <form class="has-text-centered" action="/users/<%= oneUser._id %>?_method=DELETE" method="POST">
+                    <a class="button is-primary" href="/users/<%= oneUser._id %>/edit">Edit Profile</a>
+                    <input class="button is-primary" type="submit" value="Delete Profile">
+                </form>
+            <% } %>
+        </ul>
+    </div>
+</div>
+
+<%- include('../partials/right-col') %>
+</div>
+<%- include('../partials/footer') %>

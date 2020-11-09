@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<div class="columns" style="margin:auto;">
+<%- include('../partials/left-col') %>
+
+<div class="column">
+    <div class="box mt-6">
+        <h2 class="title">Post editor</h2>
+        <form class="has-text-centered" action="/stories/<%=story._id%>/posts/<%=post._id%>?_method=PUT" method="post">
+            <textarea name="body" row=10 cols=120>
+                <%= post.body %>
+            </textarea><br>
+            <!-- Need to add drop down with authoring user later -->
+            <button class="button is-primary" type="submit">Submit</button>
+        </form>
+    </div>  
+</div>
+
+<%- include('../partials/right-col') %>
+</div>
+<%- include('../partials/footer') %>

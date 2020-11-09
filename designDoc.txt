@@ -1,0 +1,73 @@
+	
+	We are building a collaborative writing platform where users can read and write stories one paragraph at a time.
+
+	Story:
+		name:
+		description:
+		blurb: 
+		tags: []
+		postCharLimit: 
+		postLimit: 
+		content: [ref:Post] 
+		Authors: [ref:User]		
+	
+	User:
+		authoredStories: [ref:Story]
+		authoredPosts: [ref:Post]
+		name:
+		link: 
+        img: 
+		upvotes: [ref:Post]
+		downvotes: [ref:Post]
+
+	Post:
+		author: {ref:User}
+		body: String
+		upvotes: Number
+		downvotes: Number
+		
+
+User Stories:
+
+	#1: Here to browse:
+		I create an account, but dont publish anything to my profile
+		I want to see whats available, consume content, and vote on stories I like
+		I filter the search by genres I enjoy, and browse the story names/blurbs to 
+			find content to read
+		When I read stories, when I find a post I enjoy, I upvote, and when I reach the
+			end of a story, I vote on whether I want it to continue or not
+
+	#2: Here to write (free model user):
+		I make an account, and publish some non-identifying info on my profile
+		I want to contribute to stories
+		I want to be a popular writer, but not recognized by my real name
+		I want to stay generally anonymous (at least writing under a pseudonym)
+		I browse and read stories, especially keeping up with stories I have posted on
+			which I can access through the sidebar for liked stories
+		
+		
+	#3: Here to advertise (premium model):
+		I make an account with self-advertising info 
+		I'm a writer/prompter and my primary goal is self-promotion
+		I want to be a popular writer to advertise my real name
+		I want to write under my name, and advertise my published works
+		I create a profile, with a picture, links to my personals, and links to my available
+			published works
+		I write lots of posts, especially continuing to post on stories I have already posted in
+			which I access through the sidebar for "continue writing"
+
+
+
+Milestones:
+	
+	Day 1: Models / minimum routes and ejs
+    Day 2: Voting system, category tag system, User Auth
+    Day 3: Sorting and Filtering
+    Day 4: CSS, frontend JS to make things look/feel good
+    Day 5: pick up slack day
+    Day 6: exlusively bugfixes and wrap up
+
+
+Stretch Goals:
+    sequentialPostLimit - user cant sequentially post on a story, until x many other people have posted
+    featuredContent - the main page will show a list of current top content

@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<div class="columns">
+<%- include('../partials/left-col') %>
+
+
+<div class="column">
+    <div class="box mt-6" ;>
+        <div class="field">
+            <div class="control">
+                <form action="/stories" method="post">
+                    <h2 class="subtitle primary mt-4">New Story Title</h2>
+                    <p><input class="input" type="text" name="name" placeholder="The beginning of greatness..."/></p>
+                    <h2 class="subtitle primary mt-4">Brief Synopsis</h2>
+                    <p><input class="input" type="text" name="description" placeholder="short but with meaning..."/></p>
+                    <h2 class="subtitle primary mt-4">Story Content</h2>
+                    <p><input class="input" type="text" name="blurb" placeholder="the thrills, wonder, excitement, mystery, or romance!"/></p>
+                    <h2 class="subtitle primary mt-4">Set a character limit?</h2>
+                    <p><input class="input" type="number" name="postCharCount" placeholder="1000 char max"></p> 
+                    <h2 class="subtitle primary mt-4">Set a post limit?</h2>
+                    <p><input class="input" type="number" name="maxPosts" placeholder="Currently no preset limit"/></p>
+                    <br><button class="buttons" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include('../partials/right-col') %>
+</div>
+<%- include('../partials/footer') %>

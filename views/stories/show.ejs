@@ -1,0 +1,86 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<div class="columns"  style="margin:auto;">
+<%- include('../partials/left-col') %>
+
+<div class="column" style="overflow-y: auto; overflow-x:hidden; max-height:none;margin:auto">
+    <div class="box mt-5">
+        <div class="columns">
+            <div class="column is-10 is-offset-1">
+                <article class="level">
+                    <div class="level-left" style="flex-direction: column; align-items:flex-start;width:100%">
+                        <div class="title is-size-1 has-text-centered" style="width:100%">
+                            <h4><%=story.name%></h4>
+                        </div>
+                        <div class="subtitle is-size-4" style="margin:auto">
+                            <h4><%=story.description%></h4>
+                        </div>
+                        <% if (current_user == story.publisher._id){ %>
+                            <div class="field" style="display:inline-block">
+                                <p class="control">
+                                <form action="/stories/<%=story._id%>/edit" method="get">
+                                    <input class="button is-warning is small" type="submit" value="edit">
+                                </form>
+                                </p>
+                            </div>
+                            <div class="field" style="display:inline-block">
+                                <p class="control">
+                                <form action="/stories/<%=story._id%>?_method=DELETE" method="post">
+                                    <input class="button is-danger is-small" type="submit" value="delete">
+                                </form>
+                                </p>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="level-right" style="align-self:flex-start">
+                        <h4><a href="/users/<%=story.publisher._id%>"><%=story.publisher.username%></a></h4>
+                    </div>
+                </article>
+            </div>
+        </div>
+    <% for (post of story.content || []){ %>
+        <div class="columns" style="margin:auto">
+            <div class="column is-1"></div>
+            <div class="column" style="flex-direction: column; align-items:flex-start">
+                <p><%=post.body %><a href="/users/<%=post.author._id%>"> - <%=post.author.username %></a>
+                </p>
+            </div>
+            <div class="column is-1" style="align-self:center; align-items:center">
+                <% if (current_user == post.author._id){ %>
+                    <div class="field" style="display:inline-block">
+                        <p class="control">
+                        <form action="/stories/<%=story._id%>/posts/<%=post._id%>/edit" method="get">
+                            <input class="button is-warning is small" type="submit" value="edit">
+                        </form>
+                        </p>
+                    </div>
+                    <div class="field" style="display:inline-block">
+                        <p class="control">
+                        <form action="/stories/<%=story._id%>/posts/<%=post._id%>?_method=DELETE" method="post">
+                            <input class="button is-danger is-small" type="submit" value="delete">
+                        </form>
+                        </p>
+                    </div>
+                <% } %>
+            </div>
+        </div> 
+    <%}%>
+
+    
+        <div class="columns">
+            <div class="column is-10 is-offset-1">
+                <p>And then...</p>
+                <form action="/stories/<%=story._id%>/posts/" method="post">
+                    <textarea name="body" row=10 cols=120 class=textarea>       </textarea><br>
+                    <!-- Need to add drop down with authoring user later -->
+                    <input class="button is-primary" type="submit" style="margin-left:46%; width:8%" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/right-col') %>
+</div>
+<%- include('../partials/footer') %>

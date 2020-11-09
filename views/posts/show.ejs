@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<%= post.body %><br>
+<a href="/posts/<%=post._id%>/edit">Edit</a>
+<form action="/posts/<%=post._id%>?_method=DELETE" method="post">
+    <button type="submit">Delete</button>
+</form>
+
+<%- include('../partials/footer') %>

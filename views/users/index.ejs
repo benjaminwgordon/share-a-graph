@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<div class="columns">
+<%- include('../partials/left-col') %>
+<div class="column">
+    <div class="container has-text-centered mt-4">
+        <h1 class="title">Our community of Authors</h1>
+    </div>
+    <div class="mt-4" style="display:flex;flex-direction:row;flex-wrap: wrap;">
+        <% allUsers.forEach(user => { %>
+            <div class="card" style="padding: 15px;display:flex;flex-direction:column;width:22%;min-width:200px;margin:10px;justify-content: space-evenly;">
+                <div class="card-image has-text-centered flex">
+                    <% if (user.profileImage) {%>
+                        <img src="<%=user.profileImage%>"alt="user profile image" style="object-fit:contain;max-height:200px">
+                    <% } else {%>
+                        <img src="/static/assets/default-profile.svg"  alt="user profile image" style="object-fit:contain;max-height:200px">
+                    <% } %>
+                </div>
+                <div class="content has-text-centered">
+                    <p class="title is-size-4">
+                        <a href="/users/<%=user._id%>"><%= user.username %></a>
+                    </p>
+                    <p class="subtitle is-size-6">
+                        Posts: <%= user.authoredPosts.length %>
+                    </p>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include('../partials/right-col') %>
+</div>
+<%- include('../partials/footer') %>
+
