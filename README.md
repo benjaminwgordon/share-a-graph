@@ -1,7 +1,7 @@
 # Share-a-Graph
 > Collaborative Short Story Writing for Amateur Authors
 
-# View site live: [Share-a-Grpah](https://share-a-graph.herokuapp.co)
+# View site live: [Share-a-Graph](https://share-a-graph.herokuapp.co)
 
 ## Table of contents
 * [General info](#general-info)
