@@ -14,7 +14,7 @@ This project is a website for amateur authors to write stories together, one par
 Users create stories, and set a general tone and direction, then other users each write a single paragraph. 
 
 ## Screenshots
-![Example screenshot](./share-a-graph.png)
+![Example screenshot](./shareagraph.png)
 
 ## Technologies
 * Node.js
