@@ -11,8 +11,7 @@
 
 ## General info
 This project is a website for amateur authors to write stories together, one paragraph at a time.  
-Users create stories, and set a general tone and direction, then other users each write a single paragraph,
-contributing to the story as a whole.  
+Users create stories, and set a general tone and direction, then other users each write a single paragraph. 
 
 ## Screenshots
 ![Example screenshot](./share-a-graph.png)
@@ -31,6 +30,5 @@ contributing to the story as a whole.
 * Look up other users and see their posts
 
 ## Contact
-Created by
- -[Ben Gordon](https://benjaminwgordon.github.io/portfolio/)
- -[Rick Subel](https://github.com/ricksubel)
+- [Ben Gordon](https://benjaminwgordon.github.io/portfolio/)
+- [Rick Subel](https://github.com/ricksubel)
