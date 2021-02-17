@@ -2,7 +2,7 @@
 > Collaborative Short Story Writing for Amateur Authors
 
 # View site live: [Share-a-Graph](https://share-a-graph.herokuapp.co)  
--(Running on a Dyno, make take up to a minute to wake from hibernation)
+> Running on a Dyno, make take up to a minute to wake from hibernation
 
 ## Table of contents
 * [General info](#general-info)
